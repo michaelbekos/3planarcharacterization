@@ -133,15 +133,7 @@ Now we are ready to prove the main property of every almost-simple PMCM-drawing 
 Recall that at the beginning of this section we made the assumption that there is no pair of edges that cross twice in the drawing $\Gamma(G)$, i.e. that $\Gamma(G)$ is almost-simple. In the following, we prove that any PMCM-drawing of a maximal $2$-planar graph is almost-simple.
 %Recall that at the beginning of this section we made the assumption that there is no pair of edges that cross twice in the drawing $\Gamma(G)$. In the following, we prove that in a planar-maximal crossing-minimal drawing there are no such pairs of edges.
 
-\begin{lemma}
-Let $\Gamma(G)$ be a PMCM $2$-planar drawing of an optimal $2$-planar graph $G$ on $n$ vertices. Then $\Gamma(G)$ is almost-simple.
 
-\label{lem:2_planar_cross_twice}
-\end{lemma}
-
-\begin{proof}
-By definition, $\Gamma(G)$ is almost-simple if and only if there is no pair of edges that cross twice in $\Gamma(G)$. For a proof by contradiction, suppose that there exist edges $(u,u')$ and $(v,v')$ that cross twice at crossing points $c$ and $c'$. Consider the bounded region $R$ defined by $(c,c')$ segment of edges $(u,u')$ and $(v,v')$. Since edges $(u,u')$ and $(v,v')$ both have two crossings, no other edge of $G$ crosses the boundary of $R$. By Lemma~\ref{lem:crossing_twice} there exists at least one vertex of $G$ inside this region. This implies that $G$ is not connected; a contradiction.\todo{mention that G is connected} 
-\end{proof}
 
 %\begin{lemma}
 %Let $\Gamma(G)$ be a $2$-planar drawing of an optimal $2$-planar graph $G$ on $n$ vertices. There is no pair of edges that cross twice in $\Gamma(G)$. 

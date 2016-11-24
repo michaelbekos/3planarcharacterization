@@ -286,46 +286,7 @@ The last equation implies that there are only faces of length $6$, hence $f=f_6$
 Recall that at the beginning of this section we made the assumption that $\Gamma(G)$ is almost-simple, i.e. there is no pair of edges that cross twice in the drawing $\Gamma(G)$. In the following, we prove that in any PMCM drawing of an optimal $3$-planar graph $G$ on $n$ vertices there are no such pairs of edges.
  %By Lemma~\ref{lem:2_planar_faces} we can characterize all maximal $2$-planar graphs. Since the true planar subgraph of such a graph contains only faces of length $5$, we can start with a $5$-tiling of the plane. Now in the interior of every face of length $5$, we can add all  $5$ missing edges.
 
-\begin{lemma}
-Let $\Gamma(G)$ be a PMCM $3$-planar drawing of an optimal $3$-planar graph $G$ on $n$ vertices. Then $\Gamma(G)$ is almost-simple.
-%There is no pair of edges that cross twice in $\Gamma(G)$. 
-\label{lem:3_planar_cross_twice}
-\end{lemma}
 
-\begin{proof}
-For a proof by contradiction, suppose that there exist edges $(u_1,v_1)$ and $(u_2,v_2)$ that cross twice at crossing points $c_1$ and $c_2$ as in Figure~\ref{fig:3_planar_cross_twice_general}. Consider the bounded region $\mathcal{R}_{IN}$ defined by $(c_1,c_2)$ segment of edges $(u_1,v_1)$ and $(u_2,v_2)$. Let $V_{IN}\subset V(G)$ be the subset of vertices of $G$ that lie in the interior of $\mathcal{R}_{IN}$. By Lemma~\ref{lem:crossing_twice} $|V_{IN}|\geq 1$. Also, since edges $(u_1,v_1)$ and $(u_2,v_2)$ have already two crossings, there exist at most one edge $e'_1$ and an edge $e'_2$ that cross with $(u_1,v_1)$ and $(u_2,v_2)$ respectively. Since $G$ is connected \todo{mention that G is connected} at least one of $e'_1$ or $e'_2$ has an endpoint in $V_{IN}$. Suppose w.l.o.g. that $e'_1$ is an edge incident to vertex $w$, where $w\in V_{IN}$. Note that vertices $u_1$-$u_2$ define a corner pair of vertices and therefore the corner edge $[u_1,u_2]$ is a \pe (refer to the upper red edge of Figure~\ref{fig:3_planar_cross_twice_region}). Also, since $V_{IN}$ is not empty, another \pe $[u_1,u_2]$ exists (refer to the lower red edge of Figure~\ref{fig:3_planar_cross_twice_region}), such that the bounded region defined by these two \pes contains only $V_{IN}$ in its interior. Let $E_w$ be the set of edges of $G$ that have both endpoints in $V_{IN}$ and cross with edge $e'_1$ in the drawing $\Gamma(G)$ (refer to the light red edge of Figure~\ref{fig:3_planar_cross_twice_region}). Denote by $m_w$ the number of edges in $E_w$. Since $e'_1$ already crosses with edge $(u_1,v_1)$, $m_w\leq 2$. Now we distinguish two cases depending on whether $|V_{IN}|=1$ or $|V_{IN}|\geq 2$.
-
-In the first case, we have that $V_{IN}=\left\{w\right\}$ and edge $E_w$ must be empty, i.e. $m_w=0$. We proceed by removing edges $(u_1,v_1)$, $(u_2,v_2)$ and any other edge that crosses with them, and replace them with the $3$-planar pattern of Figure\ref{fig:3_planar_cross_twice_single}. We add a vertex, say $x$ and true planar edges $(u_1,x)$ and $(x,w)$. Vertices $u_1$, $x$, $w$, $x$, $u_1$, $u_2$ define a \pp $\mathcal{P}$ on six vertices (grey shaded in Figure~\ref{fig:3_planar_cross_twice_single}). In the interior of $\mathcal{P}$ we can add $8$ edges by using the $3$-planar pattern of Figure~\ref{fig:6gon}. The derived graph, say $G'$, has $n'=n+1$ vertices and at least $m'=m-4+10$ edges, where $n$ and $m$ are the number of vertices and edges of $G$ respectively. Hence $G'$ has $m'\geq 5.5n'-10.5>5.5n'-11$, i.e. more edges than allowed, a clear contradiction.
-
-In the second case, where $|V_{IN}|\geq 2$, we proceed by removing edges $(u_1,v_1)$, $(u_2,v_2)$, any other edge that crosses with them, and edges of $E_w$, i.e. we remove at most $4+m_w$ edges. We replace them with the $3$-planar pattern of Figure\ref{fig:3_planar_cross_twice_main}. We add a vertex, say $x$, true planar edge $(u_1,x)$ and two true planar non homotopic parallel edges $(x,w)$ that contain only vertices $V_{IN}-\left\{w\right\}$ in the bounded region that they define. As in the previous case, vertices $u_1$, $x$, $w$, $x$, $u_1$, $u_2$ define a \pp $\mathcal{P}$ on six vertices (grey shaded in Figure~\ref{fig:3_planar_cross_twice_main}). In the interior of $\mathcal{P}$ we can add $8$ edges by using the $3$-planar pattern of Figure~\ref{fig:6gon}. Finally, we can add a loop (if it is not already present in $\Gamma(G)$), say $\ell_w$,  at vertex $w$ containing all vertices of $V_{IN}-\left\{w\right\}$ (red loop of Figure~\ref{fig:3_planar_cross_twice_main}). The derived graph, say $G'$, has $n'=n+1$ vertices and at least $m'\geq m-(4+m_w)+11$ edges, where $n$ and $m$ are the number of vertices and edges of $G$ respectively. Hence $G'$ has $m'\geq 5.5n'-9.5-m_w$. Since $G'$ is $3$-planar $m'\leq 5.5n'-11$ also holds. By combining the two equations we have that $5.5n'-9.5-m_w\leq 5.5n'-11\Rightarrow 1.5\leq m_w$. Recall that $m_w\geq 2$, hence it must be the case that $m_w=2$ and $m'= m-(4+m_w)+11$. However, the last equality holds only in the case where the loop $\ell_w$ already exists in $G$. Now, note that any edge of $E_w$ crosses twice with loop $\ell_w$, which implies that $\ell_w$ has at least $4$ crossings, a clear contradiction.
-\end{proof}
-
-\begin{figure}[htb]
-    \centering
-    \begin{minipage}[b]{.24\textwidth}
-        \centering
-        \includegraphics[width=\textwidth,page=1]{images/3_planar_cross_twice}
-        \subcaption{~}\label{fig:3_planar_cross_twice_general}
-    \end{minipage}
-    \begin{minipage}[b]{.24\textwidth}
-        \centering
-        \includegraphics[width=\textwidth,page=2]{images/3_planar_cross_twice}
-        \subcaption{~}\label{fig:3_planar_cross_twice_region}
-    \end{minipage}
-		\begin{minipage}[b]{.24\textwidth}
-        \centering
-        \includegraphics[width=\textwidth,page=3]{images/3_planar_cross_twice}
-        \subcaption{~}\label{fig:3_planar_cross_twice_single}
-    \end{minipage}
-    \begin{minipage}[b]{.24\textwidth}
-        \centering
-        \includegraphics[width=\textwidth,page=4]{images/3_planar_cross_twice}
-        \subcaption{~}\label{fig:3_planar_cross_twice_main}
-    \end{minipage}
-    \caption{%
-    (a)-(d):~Configurations used in Lemma~\ref{lem:3_planar_cross_twice}.
-    \label{fig:3_planar_one_crossing_2}}
-\end{figure}
 
 By combining Lemmas~\ref{lem:3_planar_faces_final} and \ref{lem:3_planar_cross_twice}, we can characterize all optimal $3$-planar graphs:
 
