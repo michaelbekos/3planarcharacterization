@@ -1,16 +1,16 @@
 \documentclass[a4paper,UKenglish]{lipics-v2016}
 \usepackage{microtype}
-\usepackage{amssymb,amsmath}
+\usepackage{amssymb,amsmath,amsthm}
 \usepackage{graphics,graphicx,color}
 \usepackage{enumerate,paralist,hyperref}
 \usepackage{caption,subcaption,xspace}
-\usepackage{todonotes} 
+\usepackage{todonotes}
 \usepackage{times,setspace} 
 
 %%%% Title of contribution
 % ==================================================================
-\title{Characterizations of Optimal 2- and 3-planar Graphs}
-\titlerunning{Characterizations of Optimal 2- and 3-planar Graphs}
+\title{On Optimal 2- and 3-Planar Graphs}
+\titlerunning{On Optimal 2- and 3-Planar Graphs}
 \author[1]{Michael~A.~Bekos}
 \author[1]{Michael~Kaufmann}
 \author[2]{Chrysanthi~N.~Raftopoulou}
@@ -28,8 +28,8 @@ School of Applied Mathematical \& Physical Sciences, NTUA, Greece\\
 % ==================================================================
 
 \Copyright{Michael~A.~Bekos, Michael~Kaufmann, Chrysanthi~N.~Raftopoulou}
-\subjclass{G.2.2 Graph Theory}% mandatory: Please choose ACM 1998 classifications from http://www.acm.org/about/class/ccs98-html . E.g., cite as "F.1.1 Models of Computation".
-\keywords{$k$-planar graphs, characterization, graph drawing}%
+\subjclass{G.2.1 Combinatorics, G.2.2 Graph Theory}
+\keywords{topological graphs, optimal $k$-planar graphs, characterization}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Editor-only macros (do not touch as author)
@@ -46,7 +46,10 @@ School of Applied Mathematical \& Physical Sciences, NTUA, Greece\\
 \ArticleNo{X} % Your paper number goes here! (not your EasyChair submission number)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\theoremstyle{plain}
 \newtheorem{property}{Property}
+\newtheorem{claim}{Claim}
+\newtheorem{crl}{Corollary}
 
 \newcommand{\pe}{potential edge\xspace}
 \newcommand{\pes}{potential edges\xspace}
@@ -63,7 +66,9 @@ School of Applied Mathematical \& Physical Sciences, NTUA, Greece\\
 
 % ============================================================================
 \begin{abstract}
-$k$-planarity is a concept that extends the class of planar graphs by allowing graphs that can be drawn with at most $k$ crossings on each edge. While for $1$-planar graphs, the \emph{optimal} graphs, i.e., those with the maximum number of edges, have been completely characterized, this was not the case for $k \geq 2$. For such cases, in particular for $k=2,3$ and $4$, upper bounds on the number of edges have been developed for the case of simple graphs by Pach and Toth, Pach et al.\ and Ackerman. Since then the bounds are known to be achieved by graphs with a very regular structure; the set of uncrossed edges form pentagonal or hexagonal faces respectively, which then are completely by $5$ more edges in the pentagons for the $2$-planar case, and by $8$ more edges in the hexagons for the $3$-planar case. Unfortunately, non-homotopic parallel edges have to be allowed. Previously, we have shown that the known bounds for the simple graphs hold also for the case of non-simple graphs with non-homotopic parallel edges and loops. In this paper, we prove that only those graphs achieve the bound of $5n-10$ for $2$-planar and the $5.5n -11$ bound for $3$-planar graph and provide a complete characterization of optimal non-simple $2$- and $3$-planar graphs.
+A graph is $k$-planar if it can be drawn in the plane such that no edge is crossed more than $k$ times. While for $k=1$, \emph{optimal} $1$-planar graphs, i.e.\ those with the maximum number of edges, have been completely characterized, this has not been the case for $k \geq 2$. For $k=2,3$ and $4$, upper bounds on the edge density have been developed for the case of simple graphs by Pach and Tòth, Pach et al.\ and Ackerman, which have been used to improve the well-known ``Crossing Lemma''. Recently, we proved that these bounds also apply to non-simple $2$- and $3$-planar graphs without homotopic parallel edges and self-loops.
+
+In this paper, we completely characterize optimal $2$- and $3$-planar graphs and prove that they have a remarkably simple regular structure, although they might be non-simple. The new characterization allows us to develop efficient recognition algorithms and further notable insights concerning their structures.
 \end{abstract}
 % ============================================================================
 
@@ -72,6 +77,7 @@ $k$-planarity is a concept that extends the class of planar graphs by allowing g
 \input{properties.tex}
 \input{2planar.tex}
 \input{3planar.tex}
+\input{recognitionetal.tex}
 
 % ============================================================================
 \section{Conclusions}
@@ -83,7 +89,9 @@ In this paper, we developed techniques that allow us to characterize optimal $2$
 To Discuss:
 
 \begin{itemize}
-  \item Discussion on the desity of simple.
+  \item Discussion on the density of simple.
+  \item Recognition of optimal simple 2-planar
+  \item Recognition of optimal 3-planar
   \item Relation between optimal 2-planar and bar-1-visible.
   \item Relation between optimal 2-planar and 1-bend RAC.
 \end{itemize}
